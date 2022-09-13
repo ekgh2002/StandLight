@@ -3,6 +3,7 @@
 #include "Led.h"
 #include <wiringPi.h>
 #include "Listener.h"
+#include "Controller.h"
 
 int main()
 {
@@ -10,7 +11,9 @@ int main()
 
     Button Button1(27);
     Led led1(25);
-    Listener listener(&Button1, &led1);
+    Controller control(&led1);
+    Listener listener(&Button1, &control);
+
 
     while(1)
     {   
