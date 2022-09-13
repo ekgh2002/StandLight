@@ -12,7 +12,11 @@ int main()
 
     Button Button1(27);
     Led led1(25);
-    View view(&led1);
+    Led led2(24);
+    Led led3(23);
+    Led led4(22);
+    Led led5(21);
+    View view(&led1, &led2, &led3, &led4, &led5);
     Controller control(&view);
     Listener listener(&Button1, &control);
 
